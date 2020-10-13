@@ -8,6 +8,8 @@ let Producttotal = document.querySelector(".Producttotal");
 let number = document.querySelector("#number");
 let Exponent = document.querySelector("#exponent");
 let Powertotal = document.querySelector(".Powertotal");
+let factor = document.querySelector("#factor");
+let factortotal = document.querySelector(".factortotal");
 
 Addtotal.addEventListener ("click", function(){
     console.log("This might work")
@@ -19,16 +21,13 @@ Addtotal.addEventListener ("click", function(){
 })
 
 function add(FirstNumber,SecondNumber){
-    console.log(FirstNumber + SecondNumber)
     return FirstNumber + SecondNumber;
 }
 
 
 Producttotal.addEventListener ("click", function(){
-    console.log("This might work")
     let Product = multiply(Number (numberOne.value),Number (numberTwo.value));
-    console.log(Product)
-    console.log(document.getElementsByClassName("Productresult")[0].innerHTML)
+    
     document.getElementsByClassName("Productresult")[0].innerHTML = Product;
 
 })
@@ -59,8 +58,7 @@ function multiply(FirstNumber,SecondNumber){
 Powertotal.addEventListener ("click", function(){
     console.log("This might work")
     let Powerresult = power(Number (number.value),Number (Exponent.value));
-    console.log(Powerresult)
-    console.log(document.getElementsByClassName("Exponentresult")[0].innerHTML)
+   
     document.getElementsByClassName("Exponentresult")[0].innerHTML = Powerresult;
 
 })
@@ -86,4 +84,29 @@ function power(FirstNumber,SecondNumber){
     }
     }
     return Powerresult;
+}
+
+factortotal.addEventListener ("click", function(){
+    if (factor.value < 1 ) {alert ("Please Choose A Number Greater Than 0 ")}
+    
+    else { 
+    let factorresult = factorial(Number (factor.value));
+    
+    document.getElementsByClassName("factorresult")[0].innerHTML = factorresult;
+}
+})
+
+function factorial(FirstNumber){ 
+    let counter = 1
+    let factorresult = (FirstNumber) 
+   
+    while (counter <  (FirstNumber)){
+        
+
+        factorresult = multiply( (counter), factorresult)
+        counter++
+    }
+   
+    
+    return factorresult;
 }
